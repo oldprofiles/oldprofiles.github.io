@@ -43,37 +43,40 @@
       font-size: 1.1em;
       text-decoration: none;
       color: #f6f7fc;
-      border: 2px solid #f6f7fc;
       border-radius: 50px;
-      transition: background-color 0.3s, transform 0.3s;
       display: inline-block;
       min-width: 200px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b, #1cb5e0, #24a1de);
+      background-size: 300% 300%;
+      animation: gradientShift 5s ease infinite;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      border: none;
+      transition: transform 0.3s;
     }
 
-    .telegram {
-      background-color: #24a1de;
-    }
-
-    .whatsapp {
-      background-color: #25d366;
-    }
-
-    .store {
-      background-color: #ff5733;
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .telegram:hover {
-      background-color: #1d89be;
       transform: scale(1.05);
     }
 
     .whatsapp:hover {
-      background-color: #20b455;
       transform: scale(1.05);
     }
 
     .store:hover {
-      background-color: #e14e2a;
       transform: scale(1.05);
     }
 
@@ -82,53 +85,6 @@
       font-size: 0.9em;
       color: #888;
     }
-    .btn {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(45deg, #ff416c, #ff4b2b, #1cb5e0, #24a1de);
-  background-size: 300% 300%;
-  animation: gradientShift 5s ease infinite;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  border: none;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  transform: rotate(25deg);
-  animation: shine 2s infinite;
-}
-
-@keyframes shine {
-  0% {
-    transform: rotate(25deg) translateX(-100%);
-  }
-  100% {
-    transform: rotate(25deg) translateX(100%);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
   </style>
 </head>
 <body>
@@ -137,7 +93,7 @@
     <div class="buttons">
       <a href="https://t.me/EliteWorks" class="btn telegram" target="_blank">Telegram</a>
       <a href="https://wa.me/12523407910" class="btn whatsapp" target="_blank">WhatsApp</a>
-      <a href="https://yourstorelink.com" class="btn store" target="_blank">Visit Store</a>
+      <a href="https://accs-market.com/profile/VENTURE" class="btn store" target="_blank">Visit Store</a>
     </div>
     <footer>© 2025 OldProfiles, All rights reserved.</footer>
   </div>
