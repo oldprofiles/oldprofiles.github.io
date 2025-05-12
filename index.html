@@ -32,7 +32,13 @@
       font-size: 2rem;
       margin-bottom: 30px;
     }
-
+    .gradient-text {
+  background: linear-gradient(45deg, #00ef86, #008cff, #ec3258, #fcda00);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
     .buttons {
       display: flex;
       flex-direction: column;
@@ -92,7 +98,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Quick chat?</h1>
+    <h1 class="gradient-text">Quick chat?</h1>
     <div class="buttons">
       <a href="https://t.me/EliteWorks" class="btn telegram" target="_blank">Telegram</a>
       <a href="https://wa.me/12523407910" class="btn whatsapp" target="_blank">WhatsApp</a>
