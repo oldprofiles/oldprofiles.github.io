@@ -144,9 +144,7 @@
       <button class="btn" onclick="openLink('https://t.me/EliteWorks')">Telegram</button>
       <button class="btn" onclick="openLink('https://wa.me/12523407910')">WhatsApp</button>
       <button class="btn" onclick="openLink('https://accs-market.com/profile/VENTURE')">Visit Store</button>
-      <button class="btn" onclick="openVideo()">
-        ▶ Videos
-      </button>
+      <button class="btn" onclick="openVideo()">▶ Videos</button>
     </div>
     <footer><span class="gradient-text">© 2025 OldProfiles, All rights reserved.</span></footer>
   </div>
@@ -154,8 +152,11 @@
   <!-- Video Modal -->
   <div class="video-modal" id="videoModal">
     <span class="close-btn" onclick="closeVideo()">×</span>
-    <iframe id="videoFrame" src="" allowfullscreen allow="autoplay"></iframe>
+    <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <script>
     function openLink(url) {
@@ -166,11 +167,26 @@
       btn.addEventListener('contextmenu', e => e.preventDefault());
     });
 
+    let player;
+
     function openVideo() {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('videoFrame');
-      iframe.src = "https://www.youtube.com/embed/YP_BpbRr1Q4?autoplay=1"; // replace with your video ID
+      const videoId = 'YP_BpbRr1Q4';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1`;
       modal.style.display = 'flex';
+
+      setTimeout(() => {
+        player = new YT.Player('videoFrame', {
+          events: {
+            'onStateChange': function (event) {
+              if (event.data === YT.PlayerState.ENDED) {
+                closeVideo();
+              }
+            }
+          }
+        });
+      }, 500);
     }
 
     function closeVideo() {
