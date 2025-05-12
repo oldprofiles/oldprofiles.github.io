@@ -28,14 +28,17 @@
     }
 
     .gradient-text {
-      font-size: 2rem;
-      margin-bottom: 30px;
       background: linear-gradient(45deg, #00ef86, #008cff, #ec3258, #fcda00);
       background-size: 300% 300%;
       animation: gradientShift 15s ease infinite;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .buttons {
@@ -90,7 +93,10 @@
     footer {
       margin-top: 30px;
       font-size: 0.9em;
-      color: #888;
+    }
+
+    footer .gradient-text {
+      font-size: inherit;
     }
   </style>
 </head>
@@ -100,9 +106,9 @@
     <div class="buttons">
       <button class="btn" onclick="openLink('https://t.me/EliteWorks')">Telegram</button>
       <button class="btn" onclick="openLink('https://wa.me/12523407910')">WhatsApp</button>
-      <button class="btn" onclick="openLink('https://bit.ly/AgedAccounts')">Visit Store</button>
+      <button class="btn" onclick="openLink('https://accs-market.com/profile/VENTURE')">Visit Store</button>
     </div>
-    <footer>© 2025 OldProfiles, All rights reserved.</footer>
+    <footer><span class="gradient-text">© 2025 OldProfiles, All rights reserved.</span></footer>
   </div>
 
   <script>
@@ -110,7 +116,6 @@
       window.open(url, '_blank');
     }
 
-    // Block right-click / long-press context menu
     document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('contextmenu', e => e.preventDefault());
     });
