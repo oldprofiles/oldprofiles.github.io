@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buy Aged YouTube Accounts</title>
-  <!-- ✅ Import Roboto font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -28,17 +27,17 @@
       text-align: center;
     }
 
-    h1 {
+    .gradient-text {
       font-size: 2rem;
       margin-bottom: 30px;
+      background: linear-gradient(45deg, #00ef86, #008cff, #ec3258, #fcda00);
+      background-size: 300% 300%;
+      animation: gradientShift 15s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
-    .gradient-text {
-  background: linear-gradient(45deg, #00ef86, #008cff, #ec3258, #fcda00);
-  background-size: 300% 300%;
-  animation: gradientShift 15s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
     .buttons {
       display: flex;
       flex-direction: column;
@@ -50,19 +49,30 @@
       padding: 12px 35px;
       font-size: 1.1em;
       font-weight: bold;
-      text-decoration: none;
       color: #f6f7fc;
       border-radius: 100px;
-      display: inline-block;
       min-width: 250px;
-      position: relative;
-      overflow: hidden;
       background: linear-gradient(45deg, #00ef86, #008cff, #ec3258, #fcda00);
       background-size: 300% 300%;
       animation: gradientShift 15s ease infinite;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 1);
       border: none;
       transition: transform 0.15s;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .btn:hover {
+        transform: none;
+      }
     }
 
     @keyframes gradientShift {
@@ -77,41 +87,33 @@
       }
     }
 
-    .telegram:hover {
-      transform: scale(1.05);
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.05);
-    }
-
-    .store:hover {
-      transform: scale(1.05);
-    }
-
     footer {
       margin-top: 30px;
       font-size: 0.9em;
       color: #888;
     }
-    @media (hover: none) and (pointer: coarse) {
-  .telegram:hover,
-  .whatsapp:hover,
-  .store:hover {
-    transform: none;
-  }
-}
   </style>
 </head>
 <body>
   <div class="container">
     <h1 class="gradient-text">Quick chat?</h1>
     <div class="buttons">
-      <a href="https://t.me/EliteWorks" class="btn telegram" target="_blank">Telegram</a>
-      <a href="https://wa.me/12523407910" class="btn whatsapp" target="_blank">WhatsApp</a>
-      <a href="https://bit.ly/AgedAccounts" class="btn store" target="_blank">Visit Store</a>
+      <button class="btn" onclick="openLink('https://t.me/EliteWorks')">Telegram</button>
+      <button class="btn" onclick="openLink('https://wa.me/12523407910')">WhatsApp</button>
+      <button class="btn" onclick="openLink('https://bit.ly/AgedAccounts')">Visit Store</button>
     </div>
     <footer>© 2025 OldProfiles, All rights reserved.</footer>
   </div>
+
+  <script>
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    // Block right-click / long-press context menu
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('contextmenu', e => e.preventDefault());
+    });
+  </script>
 </body>
 </html>
