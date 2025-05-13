@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buy Aged YouTube Accounts</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Engagement&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,12 +15,13 @@
     body {
       background-color: #151b1c;
       color: #f6f7fc;
-      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      font-family: 'Roboto', sans-serif;
       height: 100vh;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     .container {
@@ -33,11 +34,25 @@
       animation: gradientShift 15s ease infinite;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      display: inline-block;
     }
 
-    h1 {
-      font-size: 2rem;
+    .brand-header {
+      font-family: 'Engagement', cursive;
+      font-size: 4.5rem;
+      font-weight: normal;
+      margin-bottom: 90px;
+    }
+
+    .brand-header .bold {
+      font-weight: bold;
+    }
+
+    .brand-header .thin {
+      font-weight: 100;
+    }
+
+    h2 {
+      font-size: 1.5rem;
       margin-bottom: 30px;
     }
 
@@ -95,15 +110,10 @@
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 200px;
       font-size: 0.9em;
     }
 
-    footer .gradient-text {
-      font-size: inherit;
-    }
-
-    /* Video Modal */
     .video-modal {
       position: fixed;
       top: 0;
@@ -139,25 +149,27 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="gradient-text">Quick chat?</h1>
+    <h1 class="brand-header">
+      <span class="gradient-text thin">Old</span><span class="gradient-text thin">Profiles</span>
+    </h1>
+    <h2 class="gradient-text thin">Let's Talk Now!</h2>
+
     <div class="buttons">
       <button class="btn" onclick="openLink('https://t.me/EliteWorks')">Telegram</button>
       <button class="btn" onclick="openLink('https://wa.me/12523407910')">WhatsApp</button>
       <button class="btn" onclick="openLink('https://accs-market.com/profile/VENTURE')">Visit Store</button>
       <button class="btn" onclick="openVideo()">▶ Videos</button>
     </div>
+
     <footer><span class="gradient-text">© 2025 OldProfiles, All rights reserved.</span></footer>
   </div>
 
-  <!-- Video Modal -->
   <div class="video-modal" id="videoModal">
     <span class="close-btn" onclick="closeVideo()">×</span>
     <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-  <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
-
   <script>
     function openLink(url) {
       window.open(url, '_blank');
